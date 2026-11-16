@@ -1,0 +1,43 @@
+name: Decyzja (needs-owner)
+description: Pytanie do Szymona. Nic nie blokuje — rekomendacja jest już wdrożona; odpowiedź komentarzem /decide.
+title: "[Decyzja] "
+type: Decision
+labels: [needs-owner]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Odpowiedź: komentarz `/decide <opcja> <uzasadnienie>` z konta właściciela (np. `/decide B taniej w utrzymaniu`).
+        Orkiestrator zapisuje decyzję, zdejmuje `needs-owner` i zamyka issue. Inna opcja niż rekomendacja = nowe zadanie.
+  - type: textarea
+    id: question
+    attributes:
+      label: Pytanie
+      description: Jedno zdanie.
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Opcje
+      description: A / B / (C) — każda z kosztem zmiany.
+      value: |
+        A —
+        B —
+    validations:
+      required: true
+  - type: input
+    id: recommendation
+    attributes:
+      label: Rekomendacja (już wdrożona)
+    validations:
+      required: true
+  - type: textarea
+    id: world
+    attributes:
+      label: Jak robi świat
+  - type: input
+    id: code
+    attributes:
+      label: Gdzie w kodzie
+      description: path:line albo `DECISION(<id>)`

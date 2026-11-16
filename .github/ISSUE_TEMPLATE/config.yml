@@ -1,0 +1,2 @@
+# Org-wide defaults (a repo with its own .github/ISSUE_TEMPLATE overrides them). Blank issues stay allowed.
+blank_issues_enabled: true

@@ -1,0 +1,36 @@
+name: Epik
+description: Większy cel podzielony na zadania (sub-issues). Epik to issue, nie gałąź (trunk-based).
+title: "[Epik] "
+type: Epic
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Cel
+      description: Co ma działać po zamknięciu epiku — jednym, dwoma zdaniami, z perspektywy użytkownika.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar
+      description: Pole „Area” w projekcie. Jeden aktywny lease na obszar.
+      options: [platform, transactions, invoices, payments, documents, edpr, companies, settings, emails, tasks, reports, agent-platform]
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definicja „gotowe”
+      description: Sprawdzalne kryteria. Epik zamyka się dopiero, gdy zadania `cleanup` z sweepu przy zamknięciu są zrobione albo odrzucone.
+    validations:
+      required: true
+  - type: textarea
+    id: flag
+    attributes:
+      label: Flaga funkcji
+      description: Nazwa flagi, pod którą niedokończony kod trafia do pnia (develop). Puste = epik na platform-v2 (wyjątek do cutoveru).
+  - type: textarea
+    id: out
+    attributes:
+      label: Poza zakresem

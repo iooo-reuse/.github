@@ -1,0 +1,43 @@
+name: Zadanie
+description: Jedna jednostka pracy = jeden PR (do ~600 linii ręcznego kodu). Podepnij jako sub-issue epiku (typ Task).
+title: "[Zadanie] "
+type: Task
+body:
+  - type: input
+    id: epic
+    attributes:
+      label: Epik
+      description: Numer epiku, np. #123 (po utworzeniu dodaj to issue jako sub-issue epiku).
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar
+      options: [platform, transactions, invoices, payments, documents, edpr, companies, settings, emails, tasks, reports, agent-platform]
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Rozmiar
+      options: ["S", "M", "L"]
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Zakres i kryteria akceptacji
+      description: Co dokładnie zmienia PR i jak sprawdzić, że działa. Pionowo — jedna operacja end-to-end w jednym module.
+    validations:
+      required: true
+  - type: textarea
+    id: paths
+    attributes:
+      label: Ścieżki
+      description: Katalogi/pliki, których dotknie PR. Nowy plik zamiast dopisywania do wspólnego rejestru.
+  - type: textarea
+    id: deps
+    attributes:
+      label: Zablokowane przez
+      description: Numery issues; po utworzeniu ustaw je jako „blocked by” (natywne zależności).
